@@ -126,7 +126,7 @@ app.get('/api/userReviews',(req,res)=>{
 })
 
 //POST REGISTER//
-app.post('/api/register',(req,res)=>{
+app.post('/api/register',auth,(req,res)=>{
     const user = new User(req.body);
 
     user.save((err,doc)=>{
